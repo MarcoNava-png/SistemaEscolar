@@ -1,0 +1,80 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
+
+/* Contenedor principal con animación de entrada */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background-color: #f5f7fa; /* Fondo agradable */
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Contenedor de la tarjeta */
+.login-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra suave */
+  padding: 2rem;
+  background-color: #ffffff;
+  animation: bounceIn 1s;
+}
+
+/* Contenedor de la imagen con animación */
+.image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eef2f7;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  animation: bounceIn 1s;
+}
+
+/* Estilo de los campos flotantes con animación */
+.input-container {
+  width: 100%;
+  animation: bounceIn 1s;
+}
+
+/* Input y Password con estilo adicional */
+input, p-password input {
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  padding: 12px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+input:focus, p-password input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Animación de error */
+.shake {
+  animation: shake 0.5s;
+}
+
+/* Contenedor del botón */
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Botón con efecto hover */
+.p-button {
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.p-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
