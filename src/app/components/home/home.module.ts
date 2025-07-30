@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { HomeComponent } from './pages/home.component';
 import { CarouselModule } from 'primeng/carousel';
-import { HomeRoutingModule } from './home-routing.module'; // ← FALTABA ESTO
+import { HomeRoutingModule } from './home-routing.module';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { HomeRoutingModule } from './home-routing.module'; // ← FALTABA ESTO
   imports: [
     CommonModule,
     CarouselModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    ButtonModule
   ]
 })
 export class HomeModule { }
