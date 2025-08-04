@@ -29,7 +29,6 @@ export class LoginService {
   }
 
   login(loginRequest: any): Observable<any> {
-    console.log("gola");
     return this.http.post(`${this.myAppUrl}/Auth/login`, loginRequest).pipe(
       tap((response: any) => {
         const jwtToken = response.token;
@@ -50,7 +49,7 @@ export class LoginService {
     localStorage.removeItem('user');
     this.isLoggedIn = false;
     this.userData = null; 
-    //window.location.reload();
+    window.location.reload();
   }
   getToken(): string | null {
     return localStorage.getItem('jwt');

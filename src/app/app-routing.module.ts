@@ -17,6 +17,9 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full',
   },
+  { path: 'alumnos', loadChildren: () => import('./components/alumnos/alumnos.module').then(m => m.AlumnosModule) },
+  { path: 'maestros', loadChildren: () => import('./components/maestros/maestros.module').then(m => m.MaestrosModule) },
+  { path: 'grupos', loadChildren: () => import('./components/grupos/grupos.module').then(m => m.GruposModule) },
   {
     path: '**',
     redirectTo: 'login',

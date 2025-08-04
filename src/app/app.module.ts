@@ -9,10 +9,14 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { LoginModule } from './components/login/login.module'; // ← Agregar esta línea
+import { BodyComponent } from './components/shared/body/body.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent 
+    AppComponent ,
+    BodyComponent   
   ],
   imports: [
     BrowserModule,

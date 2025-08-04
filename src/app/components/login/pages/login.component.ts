@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-//import { ErrorService } from '../services/error.service'; // Servicio de manejo de errores
+import { ErrorService } from '../services/error.service'; // Servicio de manejo de errores
 
 @Component({
   selector: 'app-login',
@@ -19,7 +19,8 @@ export class LoginComponent implements OnInit {
     private loginService: LoginService,
     private fb: FormBuilder,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private errorService: ErrorService
   ) { }
 
   ngOnInit(): void {
@@ -37,22 +38,19 @@ export class LoginComponent implements OnInit {
   
     this.isLoading = true;
     setTimeout(() => {
-      this.loginService.isLoggedIn = true;
-            this.router.navigateByUrl('/home');
-            this.toastr.success('¡Bienvenido!', 'Inicio de sesión exitoso');
-
       this.loginService.login(this.loginForm.value).subscribe(
         (response) => {
           if (response?.token) {
             localStorage.setItem('jwt', response.token);
-            //this.loginService.isLoggedIn = true;
-            //this.router.navigateByUrl('home/home');
-            //this.toastr.success('¡Bienvenido!', 'Inicio de sesión exitoso');
+            this.loginService.isLoggedIn = true;
+            this.router.navigateByUrl('home/home');
+            this.toastr.success('¡Bienvenido!', 'Inicio de sesión exitoso');
           }
           this.isLoading = false;
         },
         (error) => {
           this.isLoading = false;
+          this.errorService.msjError(error);
         }
       );
     }, 2000);

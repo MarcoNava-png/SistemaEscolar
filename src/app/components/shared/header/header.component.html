@@ -1,0 +1,14 @@
+<div *ngIf="loginService.isLoggedIn">
+  <header class="header">
+    <div class="options-bar">
+      <span class="datetime">{{ currentDate }} | {{ currentTime }}</span>
+      <span class="user-info">
+        {{ getFullUserName() }} - {{ loginService.userData?.role }}
+      </span>
+      <img class="photo-user" src="../../../../assets/images/user.png" alt="Usuario">
+      <button class="logout-button" (click)="logout()" aria-label="Salir del sistema">
+        <img class="close-icon" src="../../../../assets/images/salir.png" alt="Salir del sistema" title="Salir">
+      </button>
+    </div>
+  </header>
+</div>
